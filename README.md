@@ -1,53 +1,38 @@
 # Loan_case_study
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load your dataset
+df = pd.read_csv('your_dataset.csv')  # Replace with your dataset file
+
 # List of numerical columns
 numerical_columns = ['col1', 'col2', 'col3']  # Replace with your numerical columns
 
-# Function for univariate analysis of numerical columns
-def analyze_numerical_columns(data, numerical_columns):
-    for column in numerical_columns:
-        plt.figure(figsize=(12, 6))
-        
+# Univariate analysis with subplots for numerical columns
+def analyze_numerical_columns_subplots(data, numerical_columns):
+    fig, axes = plt.subplots(len(numerical_columns), 4, figsize=(20, 5 * len(numerical_columns)))
+    
+    for i, column in enumerate(numerical_columns):
         # KDE plot
-        sns.kdeplot(data[column], shade=True)
-        plt.title(f"KDE Plot for {column}")
-        plt.show()
+        sns.kdeplot(data[column], ax=axes[i, 0], shade=True)
+        axes[i, 0].set_title(f"KDE Plot for {column}")
         
         # Histogram
-        data[column].hist(bins=30)
-        plt.title(f"Histogram for {column}")
-        plt.show()
+        data[column].plot(kind='hist', ax=axes[i, 1], bins=30)
+        axes[i, 1].set_title(f"Histogram for {column}")
         
         # Boxplot
-        sns.boxplot(x=data[column])
-        plt.title(f"Boxplot for {column}")
-        plt.show()
+        sns.boxplot(x=data[column], ax=axes[i, 2])
+        axes[i, 2].set_title(f"Boxplot for {column}")
         
-        # Bar graph (value counts)
-        data[column].value_counts().plot(kind='bar')
-        plt.title(f"Bar Graph for {column}")
-        plt.show()
+        # Bar graph
+        data[column].value_counts().plot(kind='bar', ax=axes[i, 3])
+        axes[i, 3].set_title(f"Bar Graph for {column}")
+    
+    plt.tight_layout()
+    plt.show()
 
 # Call the function
-analyze_numerical_columns(df, numerical_columns)
+analyze_numerical_columns_subplots(df, numerical_columns)
 
-# List of categorical columns
-categorical_columns = ['cat_col1', 'cat_col2', 'cat_col3']  # Replace with your categorical columns
-
-# Function for univariate analysis of categorical columns
-def analyze_categorical_columns(data, categorical_columns):
-    for column in categorical_columns:
-        plt.figure(figsize=(12, 6))
-        
-        # Count plot
-        sns.countplot(x=data[column])
-        plt.title(f"Count Plot for {column}")
-        plt.show()
-        
-        # Pie chart
-        data[column].value_counts().plot.pie(autopct='%1.1f%%', startangle=90, figsize=(8, 8))
-        plt.title(f"Pie Chart for {column}")
-        plt.ylabel('')
-        plt.show()
-
-# Call the function
-analyze_categorical_columns(df, categorical_columns)
