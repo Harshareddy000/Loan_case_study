@@ -254,4 +254,54 @@ Hyperparameter Tuning: Improve model accuracy through grid/random search.
 Would you also like me to give you a ready-to-use PowerPoint (PPT) or a PDF version of this report if you want to submit it officially?
 (Just tell me: "Yes, make PPT" or "Yes, make PDF" 🎯)
 🚀
+What was done?
+
+KDE plots for numerical columns like loan amount, interest rate, annual income, DTI, etc.
+
+Insights:
+
+Loan Amount KDE:
+Smooth curve shows the most common loan amount is around $10,000, with very few large loans.
+
+Interest Rate KDE:
+Majority of loans cluster around 12%-15% interest rate. There's a long tail towards higher interest rates.
+
+Annual Income KDE:
+Strong right skew — Most borrowers earn around $50,000–$80,000 per year.
+
+DTI KDE:
+Peaks around 15%, indicating most borrowers' debt is about 15% of their income.
+
+🧠 KDE plots confirmed the skewness and concentration areas found in histograms — but gave a smoother, continuous view.
+
+🔹 Bar Plots
+What was done?
+
+Bar plots for categorical features like grade, home ownership, purpose, employment length, etc.
+
+Insights:
+
+Grade Bar Plot:
+
+Grades B and C dominate the dataset.
+
+Very few borrowers are in high-risk Grades F and G.
+
+Home Ownership Bar Plot:
+
+Majority of borrowers either rent or are under a mortgage.
+
+Very few borrowers own homes outright.
+
+Purpose Bar Plot:
+
+Most common loan purposes are debt consolidation and credit card repayment.
+
+Other purposes like medical or vacation are much less frequent.
+
+Employment Length Bar Plot:
+
+10+ years employment is the most common, followed by 2-5 years.
+
+Very few people reported 0 years (new employees).
 
