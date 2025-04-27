@@ -254,54 +254,61 @@ Hyperparameter Tuning: Improve model accuracy through grid/random search.
 Would you also like me to give you a ready-to-use PowerPoint (PPT) or a PDF version of this report if you want to submit it officially?
 (Just tell me: "Yes, make PPT" or "Yes, make PDF" 🎯)
 🚀
-What was done?
-
-KDE plots for numerical columns like loan amount, interest rate, annual income, DTI, etc.
+Countplots created for features like Loan Status, Grade, Home Ownership, Purpose, Employment Length, etc.
 
 Insights:
 
-Loan Amount KDE:
-Smooth curve shows the most common loan amount is around $10,000, with very few large loans.
+Loan Status Countplot:
 
-Interest Rate KDE:
-Majority of loans cluster around 12%-15% interest rate. There's a long tail towards higher interest rates.
+Majority of loans are Fully Paid.
 
-Annual Income KDE:
-Strong right skew — Most borrowers earn around $50,000–$80,000 per year.
+Charged Off loans are a significant minority — important to study for risk.
 
-DTI KDE:
-Peaks around 15%, indicating most borrowers' debt is about 15% of their income.
+Grade Countplot:
 
-🧠 KDE plots confirmed the skewness and concentration areas found in histograms — but gave a smoother, continuous view.
+Grades B and C have the highest number of loans.
 
-🔹 Bar Plots
+Very few loans are issued under Grades F and G.
+
+Home Ownership Countplot:
+
+Most borrowers are either under Mortgage or Renting.
+
+Very few Own their homes.
+
+Purpose Countplot:
+
+Majority of loans are for Debt Consolidation and Credit Card repayment.
+
+Very few loans for purposes like vacation or house renovations.
+
+Employment Length Countplot:
+
+Most borrowers have 10+ years of experience.
+
+🧠 Countplots helped us clearly see which categories dominate and where the risks might lie (example: lower grades, certain purposes).
+
+🔹 Pie Charts (Categorical Features)
 What was done?
 
-Bar plots for categorical features like grade, home ownership, purpose, employment length, etc.
+Pie charts plotted for features like Loan Status, Home Ownership, Purpose, etc.
 
 Insights:
 
-Grade Bar Plot:
+Loan Status Pie Chart:
 
-Grades B and C dominate the dataset.
+Visually confirms that Fully Paid loans dominate, covering more than half the dataset.
 
-Very few borrowers are in high-risk Grades F and G.
+Charged Off loans form a significant slice.
 
-Home Ownership Bar Plot:
+Home Ownership Pie Chart:
 
-Majority of borrowers either rent or are under a mortgage.
+Mortgage and Rent categories together make up a large majority.
 
-Very few borrowers own homes outright.
+Very few borrowers are outright Owners.
 
-Purpose Bar Plot:
+Purpose Pie Chart:
 
-Most common loan purposes are debt consolidation and credit card repayment.
+Over 60% of loans are for Debt Consolidation.
 
-Other purposes like medical or vacation are much less frequent.
-
-Employment Length Bar Plot:
-
-10+ years employment is the most common, followed by 2-5 years.
-
-Very few people reported 0 years (new employees).
-
+Other purposes are minor slices like small business, vacation, etc.
